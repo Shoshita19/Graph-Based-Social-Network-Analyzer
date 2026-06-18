@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph-Based Social Network Analyzer</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1><i class="fas fa-project-diagram"></i> Graph-Based Social Network Analyzer</h1>
+        <p>Analyze relationships, detect influencers, and explore networks using BFS & DFS.</p>
+
+        <button id="themeToggle">
+            <i class="fas fa-moon"></i> Toggle Theme
+        </button>
+    </header>
+
+    <div class="container">
+
+        <!-- Statistics -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <h3>Total Users</h3>
+                <p id="totalUsers">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Connections</h3>
+                <p id="totalConnections">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Top Influencer</h3>
+                <p id="topInfluencer">None</p>
+            </div>
+        </section>
+
+        <!-- Add User -->
+        <section class="card">
+            <h2><i class="fas fa-user-plus"></i> Add User</h2>
+
+            <input type="text"
+                id="userName"
+                placeholder="Enter User Name">
+
+            <button id="addUserBtn">
+                Add User
+            </button>
+        </section>
+
+        <!-- Search User -->
+        <section class="card">
+            <h2><i class="fas fa-search"></i> Search User</h2>
+
+            <input type="text"
+                id="searchUser"
+                placeholder="Search User">
+
+            <button id="searchBtn">
+                Search
+            </button>
+
+            <p id="searchResult"></p>
+        </section>
+
+        <!-- Add Connection -->
+        <section class="card">
+            <h2><i class="fas fa-link"></i> Add Connection</h2>
+
+            <select id="user1">
+                <option value="">Select User 1</option>
+            </select>
+
+            <select id="user2">
+                <option value="">Select User 2</option>
+            </select>
+
+            <button id="connectBtn">
+                Connect Users
+            </button>
+        </section>
+
+        <!-- Delete User -->
+        <section class="card">
+            <h2><i class="fas fa-user-minus"></i> Delete User</h2>
+
+            <select id="deleteUserSelect">
+                <option value="">Select User</option>
+            </select>
+
+            <button id="deleteUserBtn">
+                Delete User
+            </button>
+        </section>
+
+        <!-- BFS DFS -->
+        <section class="card">
+            <h2><i class="fas fa-sitemap"></i> Graph Traversal</h2>
+
+            <select id="startNode">
+                <option value="">Select Start Node</option>
+            </select>
+
+            <div class="button-group">
+                <button id="bfsBtn">
+                    Run BFS
+                </button>
+
+                <button id="dfsBtn">
+                    Run DFS
+                </button>
+            </div>
+
+            <div class="result-box">
+                <h3>BFS Result</h3>
+                <p id="bfsResult">No data</p>
+            </div>
+
+            <div class="result-box">
+                <h3>DFS Result</h3>
+                <p id="dfsResult">No data</p>
+            </div>
+        </section>
+
+        <!-- Influencer Detection -->
+        <section class="card">
+            <h2><i class="fas fa-star"></i> Influencer Detection</h2>
+
+            <button id="influencerBtn">
+                Detect Influencer
+            </button>
+
+            <div class="result-box">
+                <h3>Most Influential User</h3>
+                <p id="influencerResult">
+                    No analysis yet
+                </p>
+            </div>
+        </section>
+
+        <!-- Network Graph -->
+        <section class="card">
+            <h2><i class="fas fa-network-wired"></i> Network Visualization</h2>
+
+            <div id="graphContainer">
+                <svg id="graphSVG"></svg>
+            </div>
+        </section>
+
+        <!-- User List -->
+        <section class="card">
+            <h2><i class="fas fa-users"></i> Current Users</h2>
+
+            <ul id="userList"></ul>
+        </section>
+
+        <!-- Report -->
+        <section class="card">
+            <h2><i class="fas fa-file-download"></i> Report</h2>
+
+            <button id="downloadReport">
+                Download Analysis Report
+            </button>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Graph-Based Social Network Analyzer |
+            BFS • DFS • Influencer Detection
+        </p>
+    </footer>
+
+    <script src="script1.js"></script>
+
+</body>
+</html>
